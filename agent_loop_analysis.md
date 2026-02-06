@@ -37,7 +37,8 @@ flowchart TD
     O -->|否| Q[循环结束]
 
     P --> R[将工具结果回传给 LLM<br/>ContextBuilder.add_tool_result]
-    R --> S[继续下一次迭代<br/>回到 J]
+    R --> S[继续下一次迭代<br/>返回调用LLM]
+	S -...-> J
 
     N --> T[保存到会话<br/>Session.add_message]
     Q --> T
